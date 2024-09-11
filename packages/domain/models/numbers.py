@@ -14,9 +14,9 @@ class Number:
         logger.info(f"Dividing {a} by {b}")
         try:
             return a / b
-        except ZeroDivisionError:
+        except ZeroDivisionError as exc:
             logger.info(f"Cannot divide {a} by {b}")
-            return float("inf")
+            raise exc
 
 
 class Numbers:
