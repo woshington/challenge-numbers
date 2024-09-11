@@ -1,5 +1,7 @@
 from pydantic import BaseModel, Field, field_validator
 
+import settings
+
 
 class InputSchema(BaseModel):
     numbers: list[int] = Field(min_items=2)
@@ -15,4 +17,4 @@ class AverageOutputSchema(BaseModel):
     @field_validator('average')
     @classmethod
     def round(cls, v: float) -> float:
-        return round(v, 3)
+        return round(v, settings.PRECISION_FLOAT)

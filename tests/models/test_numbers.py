@@ -9,4 +9,4 @@ class TestNumbers:
 
     @mark.asyncio
     async def test_average_without_exception(self):
-        assert Numbers().average([7, 8, 9]) == 8.0
+        assert Numbers().average([7, 8, 9]) == 8

@@ -12,13 +12,15 @@ class NumberController:
             "/sum",
             self.__sum,
             methods=["POST"],
-            response_model=SumOutputSchema
+            response_model=SumOutputSchema,
+            description="Sum numbers a list of integers and return the total"
         )
         self.router.add_api_route(
             "/average",
             self.__average,
             methods=["POST"],
-            response_model=AverageOutputSchema
+            response_model=AverageOutputSchema,
+            description="Average numbers a list of integers and return the average"
         )
 
     async def __sum(self, params: InputSchema):
